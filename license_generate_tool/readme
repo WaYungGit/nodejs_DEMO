@@ -1,0 +1,16 @@
+使用说明：
+1、首先打开devinfo.txt，将需要生成license的设备信息逐行导入进来，导入规则为uid mac serialnum，示例如下：
+de8f0609eb17d76f530185ab9c5d4cc8 B8:8e:df:00:3d:F2 keyshare_0001
+a08b160dc122317dese530185ab9c5dd a6:83:5f:70:3a:f4 keyshare_0001
+
+注意：mac地址大小写均可，因为在生成工具中会对其转换为小写；
+
+2、运行generate.sh，可选两个参数，第一个参数代表输入文件，第二个参数代表输出目录，如果两个参数没有，默认输入文件为devinfo.txt，输出目录为output，输出的目录不存在会自动创建，运行命令如下：
+sh generate.sh  //没有参数代表输入文件为devinfo.txt，输出目录为output
+sh generate.sh devinfo_huiye.txt //代表输入文件为devinfo_huiye.txt，输出目录为output
+sh generate.sh devinfo_us.txt output_us //代表输入文件为devinfo_us.txt，输出目录为output_us
+
+3、目录output下的normal文件夹下会生成license原始文件，此原始文件只为查阅使用，用于导入设备进行许可认证是无效的；
+
+4、目录output下的enc文件夹下会生成license加密文件，此加密文件可用于导入设备进行许可认证；
+
